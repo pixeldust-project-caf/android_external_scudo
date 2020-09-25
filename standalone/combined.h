@@ -709,12 +709,6 @@ private:
 
   static const u32 BlockMarker = 0x44554353U;
 
-  GlobalStats Stats;
-  TSDRegistryT TSDRegistry;
-  PrimaryT Primary;
-  SecondaryT Secondary;
-  QuarantineT Quarantine;
-
   u32 Cookie;
 
   struct {
@@ -724,6 +718,12 @@ private:
     u8 DeleteSizeMismatch : 1;  // delete_size_mismatch
     u32 QuarantineMaxChunkSize; // quarantine_max_chunk_size
   } Options;
+
+  GlobalStats Stats;
+  PrimaryT Primary;
+  SecondaryT Secondary;
+  QuarantineT Quarantine;
+  TSDRegistryT TSDRegistry;
 
 #ifdef GWP_ASAN_HOOKS
   gwp_asan::GuardedPoolAllocator GuardedAlloc;
